@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, Globe, MapPin, GraduationCap, Code, Database, Server, Cloud, ShoppingCart, Bot, Figma } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, Globe, MapPin, GraduationCap, Code, Database, Server, Cloud, ShoppingCart, Bot, Figma, Boxes } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -88,14 +88,44 @@ const Index = () => {
         </div>
 
         {/* Projects Card */}
-        <div className="bento-card">
-          <h2 className="text-2xl font-bold mb-6">Current Project</h2>
-          <div className="p-6 bg-card-hover rounded-lg">
-            <div className="flex items-center gap-2 mb-3">
-              <ShoppingCart className="w-5 h-5 text-orange-400" />
-              <h3 className="text-xl font-bold">E-commerce Platform</h3>
+        <div className="bento-card col-span-3">
+          <h2 className="text-2xl font-bold mb-6">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 bg-card-hover rounded-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <ShoppingCart className="w-5 h-5 text-orange-400" />
+                <h3 className="text-xl font-bold">E-Commerce Website</h3>
+              </div>
+              <p className="text-gray-300 mb-2">A fully functional e-commerce platform with user authentication and secure payments.</p>
+              <p className="text-sm text-gray-400">Technologies: HTML, CSS, JavaScript, Node.js, MongoDB</p>
             </div>
-            <p className="text-gray-300">Enterprise-level e-commerce website with automation features</p>
+            
+            <div className="p-6 bg-card-hover rounded-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <Globe className="w-5 h-5 text-blue-400" />
+                <h3 className="text-xl font-bold">Personal Blog</h3>
+              </div>
+              <p className="text-gray-300 mb-2">Blog platform with commenting and tagging features.</p>
+              <p className="text-sm text-gray-400">Technologies: React.js, Express.js</p>
+            </div>
+            
+            <div className="p-6 bg-card-hover rounded-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <ShoppingCart className="w-5 h-5 text-green-400" />
+                <h3 className="text-xl font-bold">AI E-Commerce</h3>
+              </div>
+              <p className="text-gray-300 mb-2">Enhanced e-commerce with AI-powered recommendations.</p>
+              <p className="text-sm text-gray-400">Technologies: React.js, Node.js, TensorFlow</p>
+            </div>
+            
+            <div className="p-6 bg-card-hover rounded-lg">
+              <div className="flex items-center gap-2 mb-3">
+                <Boxes className="w-5 h-5 text-purple-400" />
+                <h3 className="text-xl font-bold">Python Game</h3>
+              </div>
+              <p className="text-gray-300 mb-2">Interactive Python game with multiple levels and scoring.</p>
+              <p className="text-sm text-gray-400">Technologies: Python, Pygame</p>
+            </div>
           </div>
         </div>
 
