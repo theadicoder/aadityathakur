@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, Globe, MapPin, GraduationCap, Code, Database, Server, Cloud, ShoppingCart, Robot, Figma } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, Globe, MapPin, GraduationCap, Code, Database, Server, Cloud, ShoppingCart, Bot, Figma } from "lucide-react";
 
 const Index = () => {
   const [time, setTime] = useState(new Date());
@@ -80,7 +80,7 @@ const Index = () => {
                 <span>UI/UX Design</span>
               </div>
               <div className="flex items-center gap-2">
-                <Robot className="w-5 h-5 text-yellow-400" />
+                <Bot className="w-5 h-5 text-yellow-400" />
                 <span>Automation</span>
               </div>
             </div>
