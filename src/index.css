@@ -34,14 +34,18 @@
   min-height: 100vh;
   margin: 0 auto;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .bento-card {
-  @apply bg-card p-8 rounded-2xl transition-all duration-300 hover:bg-card-hover;
+  @apply bg-card p-8 rounded-2xl transition-all duration-300 hover:bg-card-hover backdrop-blur-sm;
   border: 1px solid rgba(255, 255, 255, 0.1);
   min-height: 200px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .bento-card:hover {
