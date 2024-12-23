@@ -1,17 +1,14 @@
-import { useState, useEffect, useCallback } from "react";
-import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, Globe, MapPin, GraduationCap, Code, Database, Server, Cloud, ShoppingCart, Bot, Figma, Boxes } from "lucide-react";
+import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
+import { WelcomeCard } from "@/components/WelcomeCard";
+import { CurrentStatusCard } from "@/components/CurrentStatusCard";
+import { TimeCard } from "@/components/TimeCard";
+import { Newsletter } from "@/components/Newsletter";
+import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, Globe, MapPin, GraduationCap, Code, Database, Server, Cloud, ShoppingCart, Bot, Figma, Boxes } from "lucide-react";
 
 const Index = () => {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
@@ -75,47 +72,9 @@ const Index = () => {
         }}
       />
       <div className="bento-grid">
-        {/* Welcome Card */}
-        <div className="bento-card col-span-2">
-          <h2 className="text-sm text-gray-400 mb-2">welcome</h2>
-          <h1 className="text-4xl font-bold mb-4">
-            Hi, I'm <span className="text-blue-400">Aaditya Thakur</span>
-          </h1>
-          <div className="flex items-center gap-2 text-gray-300 mb-4">
-            <MapPin className="w-4 h-4" />
-            <span>Delhi, India</span>
-            <span className="mx-2">•</span>
-            <GraduationCap className="w-4 h-4" />
-            <span>D.T.A Public School</span>
-          </div>
-          <p className="text-gray-300 text-lg">
-            IT Expert, Tech Enthusiast, Developer at Google
-          </p>
-        </div>
-
-        {/* Current Status Card */}
-        <div className="bento-card row-span-2">
-          <h2 className="text-2xl font-bold mb-6">Currently</h2>
-          <ul className="space-y-4 text-gray-300">
-            <li>• Participating in Microsoft workshop</li>
-            <li>• Certified Google Cloud Developer</li>
-            <li>• 9th grade student</li>
-            <li className="mt-8 font-semibold">Learning:</li>
-            <li>• Cloud Computing</li>
-            <li>• Full Stack Development</li>
-            <li>• Cybersecurity</li>
-          </ul>
-        </div>
-
-        {/* Time Card */}
-        <div className="bento-card">
-          <h2 className="text-lg text-gray-400 mb-4">Current Time in Delhi</h2>
-          <p className="text-3xl font-bold font-mono">
-            {time.toLocaleTimeString()}
-          </p>
-        </div>
-
-        {/* Skills Card */}
+        <WelcomeCard />
+        <CurrentStatusCard />
+        <TimeCard />
         <div className="bento-card col-span-2">
           <h2 className="text-2xl font-bold mb-6">Skills & Technologies</h2>
           <div className="grid grid-cols-2 gap-6">
@@ -226,6 +185,7 @@ const Index = () => {
             </a>
           </div>
         </div>
+        <Newsletter />
       </div>
     </div>
   );
